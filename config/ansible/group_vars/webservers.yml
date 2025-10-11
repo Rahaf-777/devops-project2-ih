@@ -1,0 +1,9 @@
+---
+# Variables for Web Servers
+packages:
+  - apache2
+  - php
+  - libapache2-mod-php
+app_source_path: /tmp/app
+doc_root: /var/www/html
+

@@ -1,0 +1,15 @@
+---
+# 🔧 Playbook لتثبيت التطبيقات على كل الطبقات
+
+- name: Configure Web Servers (Frontend + Backend)
+  hosts: webservers
+  become: true
+  roles:
+    - role: web
+
+- name: Configure Load Balancer
+  hosts: loadbalancer
+  become: true
+  roles:
+    - role: lb
+

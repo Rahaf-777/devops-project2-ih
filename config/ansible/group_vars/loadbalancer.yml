@@ -1,0 +1,10 @@
+---
+# Variables for Load Balancer
+packages:
+  - apache2
+  - libxml2
+lb_config_path: /etc/apache2/sites-available/000-default.conf
+backend_servers:
+  - web1
+  - web2
+

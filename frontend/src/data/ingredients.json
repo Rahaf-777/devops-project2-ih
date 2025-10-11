@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Beef Patty",
+    "category": "patties",
+    "image": "/assets/images/beef-patty.png",
+    "price": 5.99
+  },
+  {
+    "id": 2,
+    "name": "Cheese",
+    "category": "toppings",
+    "image": "/assets/images/cheese.png",
+    "price": 1.49
+  },
+  {
+    "id": 3,
+    "name": "Lettuce",
+    "category": "toppings",
+    "image": "/assets/images/lettuce.png",
+    "price": 0.99
+  },
+  {
+    "id": 4,
+    "name": "Tomato",
+    "category": "toppings",
+    "image": "/assets/images/tomato.png",
+    "price": 1.19
+  },
+  {
+    "id": 5,
+    "name": "Ketchup",
+    "category": "sauces",
+    "image": "/assets/images/ketchup.png",
+    "price": 0.79
+  },
+  {
+    "id": 6,
+    "name": "Mayonnaise",
+    "category": "sauces",
+    "image": "/assets/images/mayo.png",
+    "price": 0.99
+  },
+  {
+    "id": 7,
+    "name": "Bun",
+    "category": "buns",
+    "image": "/assets/images/bun.png",
+    "price": 2.49
+  }
+]
+

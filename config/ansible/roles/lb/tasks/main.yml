@@ -1,0 +1,49 @@
+# ⚖️ Load Balancer Role Tasks (Apache reverse proxy)
+
+- name: Update apt cache
+  become: yes
+  apt:
+    update_cache: yes
+
+- name: Install Apache
+  become: yes
+  apt:
+    name: apache2
+    state: present
+
+- name: Enable required Apache modules
+  become: yes
+  command: a2enmod {{ item }}
+  loop:
+    - proxy
+    - proxy_balancer
+    - proxy_http
+    - lbmethod_byrequests
+
+- name: Deploy load balancer configuration
+  become: yes
+  copy:
+    dest: /etc/apache2/sites-available/000-default.conf
+    content: |
+      <VirtualHost *:80>
+          ServerAdmin webmaster@localhost
+          ProxyPreserveHost On
+          ProxyPass / balancer://mycluster/
+          ProxyPassReverse / balancer://mycluster/
+
+          <Proxy balancer://mycluster>
+              BalancerMember http://10.10.2.4:80
+              BalancerMember http://10.10.3.4:80
+              ProxySet lbmethod=byrequests
+          </Proxy>
+
+          ErrorLog ${APACHE_LOG_DIR}/error.log
+          CustomLog ${APACHE_LOG_DIR}/access.log combined
+      </VirtualHost>
+
+- name: Restart Apache
+  become: yes
+  service:
+    name: apache2
+    state: restarted
+
