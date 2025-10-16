@@ -1,3 +1,30 @@
+
+Latest update:
+
+-Live App
+[https://burger-frontend-private.braveisland-7b59969e.westeurope.azurecontainerapps.io]
+
+
+-Docker Images
+Frontend: [rahaf7/frontendapp-v2](https://hub.docker.com/r/rahaf7/frontendapp-v2)
+Backend: [rahaf7/backendapp-v2](https://hub.docker.com/r/rahaf7/backendapp-v2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Burger Builder Application
 
 A full-stack web application for building and ordering custom burgers with a modern React frontend and Spring Boot backend API.
@@ -284,3 +311,6 @@ docker run -p 8080:8080 --env-file environment.env burger-builder-backend
 ## License
 
 This project is part of a capstone project for educational purposes.
+  
+
+
